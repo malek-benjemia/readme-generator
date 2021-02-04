@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-//const generateMarkdown = require('./src/generateMarkdown');
+//const generateMarkdown = require('./utils/generateMarkdown');
 
 
 // TODO: Create an array of questions for user input
@@ -11,7 +11,7 @@ const questions = [ 'Provide a project title (Required):',
                     'Provide usage information (Required):',
                     'Provide contribution guidelines (Required):', 
                     'Provide test instructions (Required):',
-                    'Please select a license:',
+                    'Please select a license (Required - Select only one):',
                     'Provide a GitHub username (Required):',
                     'Provide an email address (Required):'
                 ];
@@ -25,7 +25,6 @@ const promptUser = () => {
               if (nameInput) {
                 return true;
               } else {
-                console.log(questions[0]);
                 return false;
               }
             }
@@ -38,7 +37,6 @@ const promptUser = () => {
               if (nameInput) {
                 return true;
               } else {
-                console.log(questions[1]);
                 return false;
               }
             }
@@ -51,7 +49,6 @@ const promptUser = () => {
               if (nameInput) {
                 return true;
               } else {
-                console.log(questions[2]);
                 return false;
               }
             }
@@ -64,7 +61,6 @@ const promptUser = () => {
               if (nameInput) {
                 return true;
               } else {
-                console.log(questions[3]);
                 return false;
               }
             }
@@ -77,7 +73,6 @@ const promptUser = () => {
               if (nameInput) {
                 return true;
               } else {
-                console.log(questions[4]);
                 return false;
               }
             }
@@ -90,7 +85,6 @@ const promptUser = () => {
               if (nameInput) {
                 return true;
               } else {
-                console.log(questions[5]);
                 return false;
               }
             }
@@ -99,7 +93,14 @@ const promptUser = () => {
             type: 'checkbox',
             name: 'license',
             message: questions[6],
-            choices: ['None', 'MIT']
+            choices: ['None', 'MIT', 'Fake'],
+            validate: nameInput => {
+                if (nameInput.length==1) {
+                  return true;
+                } else {
+                  return false;
+                }
+              }
         },
         {
             type: 'input',
@@ -109,7 +110,6 @@ const promptUser = () => {
               if (nameInput) {
                 return true;
               } else {
-                console.log(questions[7]);
                 return false;
               }
             }
@@ -122,7 +122,6 @@ const promptUser = () => {
               if (nameInput) {
                 return true;
               } else {
-                console.log(questions[8]);
                 return false;
               }
             }
