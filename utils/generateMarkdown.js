@@ -93,7 +93,7 @@ ${answer.contribution}
 ${answer.tests}
 
 ## <span id="questions">Questions</span>
-View Project on <a href="${answer.github}">GitHub</a><br>
+View Project on <a href="https://github.com/${answer.github}">GitHub</a><br>
 For any additional questions, please contact: ${answer.email}`;
 }
 
