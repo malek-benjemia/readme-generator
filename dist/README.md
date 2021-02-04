@@ -1,8 +1,8 @@
-# Title: Project A</br>
-<img src=https://img.shields.io/badge/License-MIT-yellow.svg>
+# Title: Project : WeatherDashboard</br>
+<img src=https://img.shields.io/badge/License-Apache%202.0-blue.svg>
 
 ## <span id="description">Description</span>
-Desc A
+The page provides the weather in your selected city.
 
 ## <span id="content">Table of Contents</span>
 <a href="#description">Description</a></br>
@@ -15,20 +15,20 @@ Desc A
 <a href="#questions">Questions</a></br>
 
 ## <span id="installation">Installation</span>
-Instructions A
+Use the published page to select a city.
 
 ## <span id="usage">Usage</span>
-Info usage A
+API calls may have a limit.
 
 ## <span id="license">License</span>
-This application is covered under <a href="https://opensource.org/licenses/MIT">MIT License</a>
+This application is covered under <a href="https://opensource.org/licenses/Apache-2.0">Apache License 2.0</a>
 
 ## <span id="contribution">Contributing</span>
-Contribution A
+Please contribute as you see fit.
 
 ## <span id="tests">Tests</span>
-Test A
+Test by selecting multiple cities.
 
 ## <span id="questions">Questions</span>
-View Project on <a href="https://github.com/githubname">GitHub</a><br>
-For any additional questions, please contact: email
+View Project on <a href="https://github.com/malek-benjemia">GitHub</a><br>
+For any additional questions, please contact: malekbenjemia@gmail.com
