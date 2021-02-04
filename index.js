@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-//const generateMarkdown = require('./utils/generateMarkdown');
+const { generateMarkdown, renderLicenseSection, renderLicenseLink, renderLicenseBadge }= require('./utils/generateMarkdown');
 
 
 // TODO: Create an array of questions for user input
@@ -93,7 +93,7 @@ const promptUser = () => {
             type: 'checkbox',
             name: 'license',
             message: questions[6],
-            choices: ['None', 'MIT', 'Fake'],
+            choices: ['None', 'Apache Licence 2.0', 'GNU General Public Licence v3.0', 'MIT Licence', 'BSD 2-Clause Simplified License', 'BSD 3-Clause New or Revised License', 'Boost Software Licence 1.0', 'Creative Commons Zero v1.0 Universal', 'Eclipse Public Licence 2.0', 'GNU Affero General Public Licence v3.0', 'GNU General Public Licence v2.0', 'GNU Lesser General Public License v2.1','Mozilla Public License 2.0','The Unlicense'],
             validate: nameInput => {
                 if (nameInput.length==1) {
                   return true;
@@ -132,7 +132,7 @@ const promptUser = () => {
 
 // TODO: Create a function to write README file
 const generatePage = (answer) => {
-    return `# Title: ${answer.title}
+    return `# Title: ${answer.title}  ${generateMarkdown(renderLicenseBadge(answer.license))}
 
 ## <span id="description">Description</span>
 ${answer.description}
