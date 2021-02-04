@@ -5,16 +5,15 @@ const inquirer = require('inquirer');
 
 
 // TODO: Create an array of questions for user input
-const questions = [ 'What is the title of your project?:',
-                    'Provide a description:', 
-                    'Provide installation instructions:', 
-                    'Provide usage information:',
-                    'Provide contribution guidelines:', 
-                    'Provide test instructions:',
-
+const questions = [ 'Provide a project title (Required):',
+                    'Provide a description (Required):', 
+                    'Provide installation instructions (Required):', 
+                    'Provide usage information (Required):',
+                    'Provide contribution guidelines (Required):', 
+                    'Provide test instructions (Required):',
                     'Please select a license:',
-                    'Provide a GitHub username:',
-                    'Provide an email address:'
+                    'Provide a GitHub username (Required):',
+                    'Provide an email address (Required):'
                 ];
 const promptUser = () => {
     return inquirer.prompt([
@@ -134,37 +133,43 @@ const promptUser = () => {
 
 // TODO: Create a function to write README file
 const generatePage = (answer) => {
-    return `# Title
-${answer.title}
+    return `# Title: ${answer.title}
 
-## Description
+## <span id="description">Description</span>
 ${answer.description}
 
-## Table of Contents
+## <span id="content">Table of Contents</span>
+<a href="#description">Description</a></br>
+<a href="#content">Table of Contents</a></br>
+<a href="#installation">Installation</a></br>
+<a href="#usage">Usage</a></br>
+<a href="#license">License</a></br>
+<a href="#contribution">Contributing</a></br>
+<a href="#tests">Tests</a></br>
+<a href="#questions">Questions</a></br>
 
-## Installation
+## <span id="installation">Installation</span>
 ${answer.installation}
 
-## Usage
+## <span id="usage">Usage</span>
 ${answer.usage}
 
-## License
+## <span id="license">License</span>
 ${answer.license}
 
-## Contributing
+## <span id="contribution">Contributing</span>
 ${answer.contribution}
 
-## Tests
+## <span id="tests">Tests</span>
 ${answer.tests}
 
-## Questions
-GitHub profile: ${answer.github}
-For any question, please contact: ${answer.email}`;
+## <span id="questions">Questions</span>
+View Project on <a href="${answer.github}">GitHub</a><br>
+For any additional questions, please contact: ${answer.email}`;
   };
 
 // Create a function to save the file
 function writeToFile(fileName, data) {
-
     fs.writeFile(fileName, data, err => {
         if (err) {
             console.log(err);
