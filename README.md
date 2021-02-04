@@ -4,7 +4,7 @@
 
 ## <span id="description">Description</span>
 This code allows to create a ReadMe file and add the licence badge and link.
-Please refer to the <a href="./utils/walkthrough.webm">walkthrough video</a> for more information.
+Please refer to the <a href="https://drive.google.com/file/d/13ZYQ3itZC1EQP-7RDQHeuF6Ho3blwiX2/view">walkthrough video</a> for more information.
 
 ## <span id="content">Table of Contents</span>
 <a href="#description">Description</a></br>
