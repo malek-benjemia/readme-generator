@@ -4,7 +4,7 @@
 
 ## <span id="description">Description</span>
 This code allows to create a ReadMe file and add the licence badge and link.
-Please refer to the walkthrough video for more information.
+Please refer to the <a href="./utils/walkthrough.webm">walkthrough video</a> for more information.
 
 ## <span id="content">Table of Contents</span>
 <a href="#description">Description</a></br>
@@ -32,5 +32,5 @@ Please feel free to contribute as you wish.
 Test the application by entering empty answers or multiple licenses. You will see that you won't be able to move to the next step.
 
 ## <span id="questions">Questions</span>
-View Project on <a href="malek-benjemia">GitHub</a><br>
+View Project on <a href="https://github.com/malek-benjemia">GitHub</a><br>
 For any additional questions, please contact: malekbenjemia@gmail.com
