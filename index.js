@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-const { generateMarkdown, renderLicenseSection, renderLicenseLink, renderLicenseBadge }= require('./utils/generateMarkdown');
+const generateMarkdown = require('./utils/generateMarkdown');
 
 
 // TODO: Create an array of questions for user input
@@ -131,43 +131,6 @@ const promptUser = () => {
 };
 
 // TODO: Create a function to write README file
-const generatePage = (answer) => {
-    return `# Title: ${answer.title}  ${generateMarkdown(renderLicenseBadge(answer.license))}
-
-## <span id="description">Description</span>
-${answer.description}
-
-## <span id="content">Table of Contents</span>
-<a href="#description">Description</a></br>
-<a href="#content">Table of Contents</a></br>
-<a href="#installation">Installation</a></br>
-<a href="#usage">Usage</a></br>
-<a href="#license">License</a></br>
-<a href="#contribution">Contributing</a></br>
-<a href="#tests">Tests</a></br>
-<a href="#questions">Questions</a></br>
-
-## <span id="installation">Installation</span>
-${answer.installation}
-
-## <span id="usage">Usage</span>
-${answer.usage}
-
-## <span id="license">License</span>
-${answer.license}
-
-## <span id="contribution">Contributing</span>
-${answer.contribution}
-
-## <span id="tests">Tests</span>
-${answer.tests}
-
-## <span id="questions">Questions</span>
-View Project on <a href="${answer.github}">GitHub</a><br>
-For any additional questions, please contact: ${answer.email}`;
-  };
-
-// Create a function to save the file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, err => {
         if (err) {
@@ -182,7 +145,7 @@ function writeToFile(fileName, data) {
 function init() {
     promptUser()
     .then(answer => {
-        return writeToFile('./dist/README.md',generatePage(answer));
+        return writeToFile('./dist/README.md',generateMarkdown(answer));
       })
 }
 
